@@ -1,0 +1,394 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText,MissingDefaultResource">
+
+    <!-- 메인화면 우측의 전체보기 아이콘을 누르면 펼쳐지는 메뉴화면 -->
+    <!-- 프로필 이미지는 기본이미지로 설정-->
+    <!--상단프로필영역-->
+    <ImageView
+        android:id="@+id/iv_picture_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <RelativeLayout
+        android:id="@+id/note_title_area"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#ffffff">
+        <!-- X 아이콘 -->
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="30dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_close" />
+
+        <!--연필아이콘-->
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="4dp"
+            android:layout_toRightOf="@+id/tv_profile_title"
+            android:src="@drawable/ic_edit_black"
+            android:visibility="invisible"
+            />
+
+        <!--프로필아이콘-->
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="54dp"
+            android:layout_height="55dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginRight="16dp"
+            android:drawablePadding="8dip"
+            android:src="@drawable/ic_profile_default"
+            android:visibility="gone"/>
+
+        <!--누적시간 title-->
+        <TextView
+            android:id="@+id/tv_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@id/iv_profile"
+            android:gravity="center"
+            android:text="총 누적시간"
+            android:textColor="#333333"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <!--누적시간-->
+        <TextView
+            android:id="@+id/tv_all_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_profile_title"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@id/iv_profile"
+            android:layout_marginStart="30dp"
+            android:gravity="center"
+            android:text="200시간 30분"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+
+        <!--  오늘집중시간, 이번주 집중시간 -->
+        <!--가로구분선-->
+        <View
+            android:id="@+id/v_profile_bottom_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/iv_profile"
+            android:layout_marginTop="80dp"
+            android:background="#EAEAEA"
+            android:visibility="invisible"
+            />
+        <!--세로구분선-->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_profile"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="60dp"
+            android:background="#EAEAEA"
+            android:visibility="invisible"/>
+
+
+
+        <!-- 시간표기-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v_profile_bottom_line"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+            <!--오늘집중시간-->
+            <TextView
+                android:id="@+id/tv_today_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="10시간 30분"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+            <!--이번주 집중시간-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="50시간 10분"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@+id/v_profile_bottom_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+
+            android:orientation="horizontal"
+            android:weightSum="10"
+            tools:ignore="NotSibling">
+            <!--오늘집중시간-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="@string/menu_today_time"
+                android:textColor="#999999"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+            <!--이번주집중시간-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:text="@string/menu_weekly_time"
+                android:textColor="#999999"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <!--리스트시작 (설정, 컬러변경, 약관 )-->
+
+
+    <LinearLayout
+        android:id="@+id/note_area_start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/note_title_area"
+        android:layout_marginTop="0dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <!--구분선-->
+        <View
+            android:id="@+id/v_title_line"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="0dp"
+            android:background="#EAEAEA" />
+
+
+        <!--설정 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--양쪽정렬을 위한 텍스트뷰 -->
+            <TextView
+                android:id="@+id/tv_menu_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/ic_dummy"
+                android:drawablePadding="8dip"
+                android:gravity="left|center_vertical"
+                android:paddingTop="20dp"
+                android:paddingRight="100dp"
+                android:paddingBottom="20dp"
+                android:text="@string/menu_setting"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <!-- > 아이콘-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="24dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_list_arrow" />
+        </LinearLayout>
+        <!--구분선-->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#EAEAEA" />
+
+
+
+
+        <!--이용약관 개인보호 정책 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/ic_dummy"
+                android:drawablePadding="8dip"
+                android:gravity="left|center_vertical"
+                android:paddingTop="20dp"
+                android:paddingEnd="100dp"
+                android:paddingRight="100dp"
+                android:paddingBottom="20dp"
+                android:text="@string/setting_terms"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <!--양쪽정렬을 위한 텍스트뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+            <!-- > 아이콘-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="24dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_list_arrow" />
+        </LinearLayout>
+        <!--구분선-->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#EAEAEA" />
+
+
+        <!--공유하기-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_ic_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:drawableLeft="@drawable/ic_dummy"
+                android:drawablePadding="8dip"
+                android:gravity="left|center_vertical"
+                android:paddingTop="20dp"
+
+                android:paddingBottom="20dp"
+                android:text="앱 정보 공유하기"
+                android:paddingRight="100dp"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:ignore="RtlHardcoded" />
+
+            <!--양쪽정렬을위한 텍스트뷰 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <!-- > 아이콘-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="24dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_list_arrow" />
+
+
+        </LinearLayout>
+
+        <!--구분선-->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="#EAEAEA" />
+
+
+<!--        &lt;!&ndash;로그인아이디 로그아웃&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_login_info"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="30dp"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                android:drawableLeft="@drawable/ic_dummy"-->
+<!--                android:drawablePadding="8dip"-->
+<!--                android:gravity="left|center_vertical"-->
+<!--                android:paddingTop="20dp"-->
+<!--                android:paddingBottom="20dp"-->
+<!--                android:text="1234"-->
+<!--                android:textColor="#666666"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="normal"-->
+<!--                tools:ignore="RtlHardcoded" />-->
+
+<!--            &lt;!&ndash;양쪽정렬을위한 텍스트뷰 &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="end"-->
+<!--                android:padding="24dp"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:text="로그아웃"-->
+<!--                android:textAlignment="viewEnd"-->
+<!--                android:textColor="#666666"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="normal" />-->
+<!--        </LinearLayout>-->
+
+<!--        &lt;!&ndash;구분선&ndash;&gt;-->
+<!--        <View-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="#EAEAEA" />-->
+
+
+    </LinearLayout>
+</RelativeLayout>
+
+
+

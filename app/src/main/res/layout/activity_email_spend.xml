@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+
+    <!-- 비밀번호 재설정화면/ 사용자이메일 인증하기 / 이메일 인증하기 버튼을 누르면 이메일로 인증번호 전송-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+
+        <!-- 비밀번호재설정 대 title -->
+        <TextView
+            android:id="@+id/tv_password_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_request"
+            android:textColor="#7A62CC"
+            android:textSize="36sp"
+            android:textStyle="normal" />
+
+        <!-- 비밀번호재설정 소 title -->
+        <TextView
+            android:id="@+id/tv_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/password_message"
+            android:textColor="#666666"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <!-- 비밀번호재설정 소 title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="@string/registered_email"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <!--받아온 이메일주소-->
+        <TextView
+            android:id="@+id/tv_email_get"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#666666"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+
+        <!--이메일 인증버튼-->
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn_line"
+            android:backgroundTint="#7A62CC">
+
+            <TextView
+                android:id="@+id/tv_email_spend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_centerInParent="true"
+                android:text="@string/email_certification"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

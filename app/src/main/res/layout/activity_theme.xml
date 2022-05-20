@@ -1,0 +1,174 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText,MissingDefaultResource"
+    tools:layout_editor_absoluteY="25dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/note_title_area"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#ffffff"
+        tools:ignore="MissingConstraints">
+
+
+        <!-- 뒤로가기 아이콘-->
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_back_arrow_gray" />
+
+
+        <!--타이틀-->
+        <TextView
+            android:id="@+id/tv_note_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/theme_title"
+            android:textColor="#333333"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <!-- 리사이클러뷰 설정  -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:background="#f2f2f2"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+    <!--녹색원-->
+    <TextView
+        android:id="@+id/tv_circle_green"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_green"
+        android:gravity="center"
+        android:text="녹색"
+        android:textColor="#ffffff" />
+    <!--보라원-->
+    <TextView
+        android:id="@+id/tv_circle_purple"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/circle_purple"
+        android:gravity="center"
+        android:text="보라"
+        android:textColor="#ffffff" />
+
+        <!--주황원-->
+        <TextView
+            android:id="@+id/tv_circle_orange"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_orange"
+            android:gravity="center"
+            android:text="주황"
+            android:textColor="#ffffff" />
+
+        <!--노랑원-->
+        <TextView
+            android:id="@+id/tv_circle_yellow"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_yellow"
+            android:gravity="center"
+            android:text="노랑"
+            android:textColor="#ffffff" />
+
+        <!--핑크원-->
+        <TextView
+            android:id="@+id/tv_circle_pink"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_pink"
+            android:gravity="center"
+            android:text="핑크"
+            android:textColor="#ffffff" />
+
+        <!--노랑원-->
+        <TextView
+            android:id="@+id/tv_circle_blue"
+            android:layout_width="50dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/circle_blue"
+            android:gravity="center"
+            android:text="파랑"
+            android:textColor="#ffffff" />
+
+
+
+    </LinearLayout>
+
+    <!--추가하기 버튼-->
+    <TextView
+        android:id="@+id/tv_color_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_line"
+        android:drawableLeft="@drawable/ic_add"
+        android:drawablePadding="5dip"
+        android:gravity="left|center_vertical"
+        android:paddingStart="18dp"
+        android:paddingLeft="18dp"
+        android:text="컬러 추가하기"
+        android:textColor="#999999"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        />
+
+
+</LinearLayout>
+
+
+

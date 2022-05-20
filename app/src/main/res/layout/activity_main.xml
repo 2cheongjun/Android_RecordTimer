@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.application.gsonexample.main_activity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="260dp">
+
+        <View
+            android:id="@+id/timer_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/timer_area" />
+
+
+        <!--나의 목표 기록하기(유저가 목표를 직접작성하는 부분 / 초기에는 연필모양 + 기록하기상태-->
+
+
+        <!-- 음악 아이콘  -->
+        <ToggleButton
+            android:id="@+id/iv_music_play"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/toggle_btn"
+            android:padding="10dp"
+            android:textOff=""
+            android:textOn=""
+            tools:ignore="RtlHardcoded" />
+
+        <!--그래프 아이콘-->
+        <ImageView
+            android:id="@+id/iv_graph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="50dp"
+            android:layout_toEndOf="@id/iv_music_play"
+            android:padding="10dp"
+            android:src="@drawable/ic_graph" />
+
+        <!--메뉴아이콘-->
+        <ImageView
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="0dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_menu" />
+
+
+        <!--진행바-->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:background="#009E4D4D"
+            android:max="100"
+            android:outlineSpotShadowColor="@color/black" />
+
+
+        <!--시간 set 버튼-->
+        <Button
+            android:id="@+id/btn_timer_set"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="145dp"
+            android:layout_toRightOf="@id/et_input_times"
+            android:padding="10dp"
+            android:text="set"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <!-- 목표설정시간   -->
+        <TextView
+            android:id="@+id/tv_timer_goal_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="" />
+
+
+        <!--크게보기 버튼-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!--시작버튼-->
+            <Button
+                android:id="@+id/btn_timer_start_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="190dp"
+                android:enabled="true"
+                android:padding="10dp"
+                android:text="시작" />
+
+            <!--저장버튼-->
+            <Button
+                android:id="@+id/btn_timer_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="190dp"
+                android:layout_marginRight="20dp"
+                android:enabled="true"
+                android:padding="10dp"
+                android:text="저장" />
+
+
+        </LinearLayout>
+
+        <!--        < 크게보기-->
+        <!--            android:id="@+id/iv_big_view"-->
+        <!--            android:layout_width="70dp"-->
+        <!--            android:layout_height="30dp"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_marginLeft="20dp"-->
+        <!--            android:layout_marginTop="220dp"-->
+        <!--            android:layout_marginRight="0dp"-->
+        <!--            android:src="@drawable/btn_bigview"-->
+        <!--            android:visibility="visible" />-->
+
+
+        <!--카운트다운-->
+        <TextView
+            android:id="@+id/tv_counter_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:text="00분:00초"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <!-- 시간입력-->
+        <EditText
+            android:id="@+id/et_input_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="시간입력(분)"
+            android:inputType="number"
+            android:maxLength="4"
+            android:textColorHint="#ffffff"
+            android:textSize="14sp" />
+
+
+        <!-- 리사이클러뷰  -->
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginRight="14dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_goal_add"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_line"
+            android:drawableLeft="@drawable/ic_add"
+            android:drawablePadding="5dip"
+            android:gravity="left|center_vertical"
+            android:paddingStart="18dp"
+            android:paddingLeft="18dp"
+
+            android:text="@string/list_add_goal"
+            android:textColor="#999999"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/linearLayout"
+        app:layout_anchorGravity="bottom|center">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_test"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="310dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#f4f4f4"
+            tools:ignore="NotSibling" />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/layout_color_pop" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

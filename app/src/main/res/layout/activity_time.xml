@@ -1,0 +1,156 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText">
+
+    <!--타이머 크게 보기 화면-->
+    <!-- 메인화면 상단의 타이머가 크게보기 버튼을 누르면 펼쳐지는 상태
+    하단의 작게보기 버튼을 누르면 다시 리스트화면을 전환한다.-->
+
+
+    <!--상단영역-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#7A62CC"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+<!--        &lt;!&ndash;나의목표기록하기 &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/tv_main_text"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginEnd="70dp"-->
+<!--            android:layout_marginRight="70dp"-->
+<!--            android:paddingTop="40dp"-->
+<!--            android:text="@string/list_user_write"-->
+<!--            android:textColor="#ffffff"-->
+<!--            android:textSize="22sp"-->
+<!--            android:textStyle="bold" />-->
+
+
+
+<!--        &lt;!&ndash;그래프 아이콘&ndash;&gt;-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            android:layout_marginRight="40dp"-->
+
+<!--            android:src="@drawable/ic_graph" />-->
+
+<!--        &lt;!&ndash;메뉴아이콘&ndash;&gt;-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iv_menu"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginTop="44dp"-->
+<!--            android:layout_marginRight="0dp"-->
+<!--            android:src="@drawable/ic_menu" />-->
+
+
+        <!--시간프로그래스-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_time_text"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tv_counter_big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60dp"
+                android:src="@drawable/timer_big" />
+
+        </LinearLayout>
+
+        <!--기록정지-->
+        <LinearLayout
+            android:id="@+id/tv_record_group"
+            android:layout_marginTop="280dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="UnknownId">
+            <!--기록버튼-->
+            <ImageView
+                android:id="@+id/iv_record_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:src="@drawable/ic_record" />
+            <!--일시정지버튼-->
+            <ImageView
+                android:id="@+id/iv_pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+
+                android:src="@drawable/ic_pause" />
+            <!--정지버튼-->
+            <ImageView
+                android:id="@+id/iv_stop_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_stop" />
+        </LinearLayout>
+
+        <!--공부시간 기록되는 영역-->
+        <TextView
+            android:id="@+id/tv_record_area"
+            android:layout_below="@+id/tv_record_group"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:gravity="left"
+            android:text="@string/big_time_record_write"
+            android:textColor="#FFFFFF"
+            android:textStyle="normal"
+            android:textSize="16sp" />
+
+
+
+        <!--시간기록하기 버튼-->
+        <TextView
+            android:id="@+id/tv_record"
+            android:layout_below="@+id/tv_record_group"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="160dp"
+            android:background="@drawable/btn_login"
+            android:gravity="center"
+            android:text="@string/btn_time_record"
+            android:textSize="16sp" />
+        <!-- 작게보기버튼-->
+        <TextView
+            android:id="@+id/tv_small_view"
+            android:layout_below="@+id/tv_record"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/btn_small_view"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+</RelativeLayout>
+

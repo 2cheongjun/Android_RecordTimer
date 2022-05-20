@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical"
+    tools:ignore="ExtraText"
+    android:id="@+id/graph_tab_container"
+  >
+
+    <!--메인에서 우측 상단의 아이콘을 눌렀을떄 하단에서 펼쳐지는 팝업-->
+    <!-- 팝업은 목표달성률/ 통계 탭으로 이루어져 있다.-->
+    <!--목표의 진행률을 원형 %의 값으로 보여준다.-->
+
+    <!--목표달성률 탭 시작-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:background="#ffffff"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp">
+
+        <!-- 목표달성률/ 통계 tab -->
+        <TextView
+            android:id="@+id/ic_close_pop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/goal_pop_close_text"
+             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/tab_area"
+            android:layout_below="@id/ic_close_pop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <!--목표달성률-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/goal_percent"
+                android:textAlignment="center"
+                android:textColor="#333333"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!--통계-->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="#f4f4f4"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/goal_pop_statistics"
+                android:textAlignment="center"
+                android:textColor="#999999"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!--텍스트내용-->
+        <LinearLayout
+            android:id="@+id/notice_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tab_area"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <!--구분선-->
+            <View
+                android:id="@+id/notice_bottom_line"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#d2d2d2" />
+        </LinearLayout>
+
+        <!--하단도형영역-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/notice_text"
+            android:orientation="horizontal">
+
+
+             <RelativeLayout
+                android:id="@+id/circle_purple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp">
+
+                <!-- 보라 원-->
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_purple"
+                    android:gravity="center"
+                    android:text="100%\n코딩"
+                    android:textColor="#ffffff" />
+                <!-- 노랑 원-->
+                <TextView
+                    android:id="@+id/yellow_circle"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_yellow"
+                    android:gravity="center"
+                    android:text="80%\n 모션그래픽"
+                    android:textColor="#ffffff"
+                    tools:ignore="NotSibling" />
+
+                <!-- 핑크 원-->
+                <TextView
+                    android:id="@+id/pink_circle"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_pink"
+                    android:gravity="center"
+                    android:text="50%\n 모션그래픽"
+                    android:textColor="#ffffff"
+                    tools:ignore="NotSibling" />
+
+                <!-- 그린 원-->
+                <TextView
+                    android:id="@+id/green_circle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/circle_green"
+                    android:gravity="center"
+                    android:text="30%\n줌바"
+                    android:textColor="#ffffff"
+                    tools:ignore="NotSibling" />
+
+                <!-- 블루 원-->
+                <TextView
+                    android:id="@+id/blue_circle"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="60dp"
+                    android:background="@drawable/circle_blue"
+                    android:gravity="center"
+                    android:text="50%\n영어회화"
+                    android:textColor="#ffffff"
+                    tools:ignore="NotSibling" />
+
+                <!--  오렌지 원-->
+                <TextView
+                    android:id="@+id/orange_circle"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/circle_orange"
+                    android:gravity="center"
+                    android:text="50%\n영어회화"
+                    android:textColor="#ffffff"
+                    tools:ignore="NotSibling"
+                    android:layout_alignParentStart="true" />
+
+            </RelativeLayout>
+
+            <!--  노란 원-->
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>
+

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/color_pop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_color_pop"
+    android:orientation="vertical"
+    app:behavior_peekHeight="40dp"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:id="@+id/color_select"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="타이머 컬러선택"
+        android:textColor="#FFF"
+        android:textSize="14dp" />
+
+
+    <LinearLayout
+        android:id="@+id/layout_note_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+<!--보라컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_purple"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_purple"/>
+            <ImageView
+                android:id="@+id/image_color_purple"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                android:src="@drawable/ic_done"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <!--핑크컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_pink"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_pink"/>
+            <ImageView
+                android:id="@+id/image_color_pink"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <!--파랑컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_blue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_blue"/>
+            <ImageView
+                android:id="@+id/image_color_blue"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                app:tint="@color/white" />
+        </FrameLayout>
+        <!--노랑컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_yellow"/>
+            <ImageView
+                android:id="@+id/image_color_yellow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!--오렌지컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_orange"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_orange"/>
+            <ImageView
+                android:id="@+id/image_color_orange"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!--그린컬러-->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <View
+                android:id="@+id/view_color_green"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_note_color_green"/>
+            <ImageView
+                android:id="@+id/image_color_green"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="string/app_name"
+                android:padding="10dp"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+</LinearLayout>

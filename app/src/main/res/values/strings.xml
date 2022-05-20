@@ -1,0 +1,71 @@
+<resources>
+    <string name="podo">My Application</string>
+    <string name="join">Join</string>
+
+    <!-- 공통버튼 -->
+    <string name="big_time_record_write">공부시간:</string>
+    <string name="btn_time_record">시간기록하기</string>
+    <string name="btn_small_view">작게보기</string>
+    <string name="btn_login">로그인하기</string>
+    <string name="next">다음</string>
+
+    <!-- 타이머 -->
+    <string name="profile_my_time">나의 성장 누적시간</string>
+    <string name="menu_today_time">오늘 집중시간</string>
+    <string name="menu_weekly_time">이번주 집중시간</string>
+
+    <!-- 노트 -->
+    <string name="note_start_day">시작일</string>
+    <string name="note_end_day">종료일</string>
+    <string name="note_note">노트</string>
+
+    <!-- 메인 -->
+    <string name="goal_percent">목표 100시간</string>
+    <string name="list_add_goal">목표추가하기</string>
+    <string name="list_user_write">나의목표 기록하기</string>
+
+    <!-- 그래프 팝업 / 통계 팝업 -->
+    <string name="goal_pop_statistics">통계</string>
+    <string name="goal_pop_notice">오늘 목표를 얼마나 달성햇나요?</string>
+
+
+    <!-- 메뉴  -->
+    <string name="menu_setting">설정</string>
+    <string name="menu_coming_soon">준비중</string>
+
+
+    <!-- intro -->
+    <string name="intro_password">비밀번호</string>
+    <string name="intro_user_email">아이디를 입력하세요.(이메일주소)</string>
+
+    <string name="intro_re_password">비밀번호재설정</string>
+    <string name="intro_user_join">회원가입하기</string>
+    <string name="password_message">비밀번호 재설정을 위해 사용자 확인을 진행합니다. \n이메일 인증 후 비밀번호를 재설정하실 수 있습니다.</string>
+    <string name="registered_email">등록된 이메일 주소</string>
+    <string name="email_certification">이메일 인증하기</string>
+    <string name="password_message_email">비밀번호를 재설정할 이메일 주소를 적어주세요.</string>
+    <string name="password_request">사용자 이메일\n인증하기</string>
+    <string name="password_reset">비밀번호를\n재설정합니다.</string>
+    <string name="email_check">가입한 이메일주소</string>
+
+
+    <!--설정-->
+    <string name="menu_theme_change">컬러변경하기</string>
+    <string name="setting_alarm">알람설정</string>
+    <string name="setting_title">설정</string>
+    <string name="setting_vibes">진동설정</string>
+    <string name="setting_widget">위젯</string>
+    <string name="setting_version">앱버전1.1</string>
+    <string name="setting_version_text">최신버전입니다.</string>
+    <string name="setting_delete_data">데이터초기화</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="termsofuse_text">이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책이용 약관 개인 정보 보호 정책</string>
+    <string name="terms_title">이용약관 개인정보처리방침</string>
+    <string name="setting_terms">이용약관 개인보호 정책</string>
+    <string name="theme_title">컬러변경</string>
+    <string name="goal_pop_close_text">통계 팝업 닫기</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

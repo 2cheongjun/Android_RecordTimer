@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication">
+    <!-- 허용 권한 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/podo"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:windowSoftInputMode="stateAlwaysHidden"
+        android:theme="@style/Theme.MyApplication"
+        android:name=".intro.KakaoApplication"
+        >
+
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/example_item" /> <!-- sms 리시버 -->
+        <receiver
+            android:name=".main.sms_receiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".main.music_service"
+            android:enabled="true" />
+
+        <activity android:name=".intro.intro_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- sms결과물화면 -->
+        <activity android:name=".main.sms_activity" /> <!-- 비밀번호재설정 -->
+        <activity android:name=".intro.password_reset_activity" /> <!-- 비밀번호재설정 이메일 인증 -->
+        <activity android:name=".intro.email_spend_activity" /> <!-- password_email_finish -->
+        <activity android:name=".intro.email_finish_activity" /> <!-- 이메일완료 -->
+        <activity android:name=".intro.join_activity" /> <!-- 회원가입화면 -->
+        <activity android:name=".intro.join_result_activity" /> <!-- 회원가입완료화면 -->
+        <activity android:name=".main.main_activity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+
+                    <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
+                    <data android:host="oauth"
+                        android:scheme="kakaocf847b6d619a3fe4180f322a4823139e" />
+                </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".main.main_item"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".graph_pop_activity" />
+        <activity android:name=".main.time_activity" />
+        <activity android:name=".note.note_activity"
+
+            />
+        <activity android:name=".allmenu.all_menu_activity" />
+        <activity android:name=".allmenu.setting_activity" /> <!-- 컬러테마변경페이지 -->
+        <activity android:name=".theme.theme_activity" /> <!-- terms of use 페이지 -->
+        <activity android:name=".allmenu.term_of_use_activity" />
+        <activity android:name=".fragment.chart_activity" />
+
+
+
+    </application>
+
+</manifest>

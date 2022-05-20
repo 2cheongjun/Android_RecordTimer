@@ -1,0 +1,286 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--메인에서 추가한 목표 리스트의 상세 페이지 -->
+        <!--    목표달성률,체크리스트, 노트, 이미지로 구성되어 있다.-->
+        <!--    우측상단의 공유기능으로 노트를 공유할수 있다.-->
+
+
+        <RelativeLayout
+            android:id="@+id/note_title_area"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#7A62CC"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp">
+
+
+            <!-- 뒤로가기 아이콘-->
+            <ImageView
+                android:id="@+id/tv_back_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_back_arrow" />
+
+
+            <!--저장버튼-->
+            <TextView
+                android:id="@+id/tv_note_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="-3dp"
+                android:gravity="center|center_vertical"
+                android:maxLines="1"
+                android:paddingTop="20dp"
+                android:text="모션그래픽"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_back_white"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="2dp"
+                android:text="저장"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+        <!--노트영역시작-->
+
+        <!--달력-->
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:mcv_selectionColor="#a9dbf0cb"
+            app:mcv_showOtherDates="defaults" />
+
+
+        <!--시작일 영역-->
+        <RelativeLayout
+            android:id="@+id/start_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/note_title_area"
+            android:background="#f4f4f4">
+
+
+            <!--시작일-->
+            <TextView
+                android:id="@+id/tv_start_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:drawablePadding="8dip"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="@string/note_start_day"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_start_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/tv_start_title"
+                android:gravity="left"
+                android:hint="2020.02.08"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded" />
+
+
+            <!--종료일-->
+            <TextView
+                android:id="@+id/tv_end_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="70dp"
+
+                android:drawablePadding="8dip"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="@string/note_end_day"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_end_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv_end_title"
+                android:layout_toRightOf="@+id/tv_end_title"
+                android:gravity="left"
+                android:hint="2020.02.08"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:textColor="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+
+            android:id="@+id/note_area_start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/start_day"
+            android:background="#f4f4f4">
+
+
+<!--            &lt;!&ndash;체크리스트영역 시작&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/check_list_area"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/v_title_line"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:orientation="horizontal">-->
+<!--                &lt;!&ndash;체크리스트제목&ndash;&gt;-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:drawableRight="@drawable/ic_more"-->
+<!--                    android:drawablePadding="8dip"-->
+<!--                    android:gravity="left|center_vertical"-->
+<!--                    android:paddingLeft="30dp"-->
+<!--                    android:paddingRight="30dp"-->
+<!--                    android:text="Check list"-->
+<!--                    android:textColor="#333333"-->
+<!--                    android:textSize="20sp"-->
+<!--                    android:textStyle="bold" />-->
+<!--            </LinearLayout>-->
+
+
+<!--            &lt;!&ndash;체크박스&ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/checkbox_list"-->
+<!--                android:layout_width="fill_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/check_list_area"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginRight="30dp"-->
+<!--                android:orientation="vertical">-->
+
+<!--                &lt;!&ndash;체크박스리스트뷰&ndash;&gt;-->
+<!--                <ListView-->
+<!--                    android:id="@+id/listView_data"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:choiceMode="multipleChoice" />-->
+
+<!--            </LinearLayout>-->
+
+
+            <!--노트시작-->
+            <LinearLayout
+                android:id="@+id/note_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:background="#FFFFFF"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="30dp"
+                    android:weightSum="10">
+                    <!--노트제목-->
+                    <TextView
+                        android:id="@+id/tv_memo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_weight="9"
+                        android:drawablePadding="8dip"
+
+                        android:gravity="left|center_vertical"
+                        android:text="@string/note_note"
+                        android:textColor="#333333"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_memo_del"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="삭제"
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        tools:ignore="RtlHardcoded" />
+
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/tv_note_write"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/tv_memo_title"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:drawablePadding="8dip"
+                    android:gravity="left"
+                    android:hint="내용을 입력하세요."
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
+
+
+
